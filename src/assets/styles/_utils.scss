@@ -1,0 +1,39 @@
+.container {
+	margin-inline: auto;
+	padding: 0 $padding-x;
+
+	width: 100%;
+	max-width: $container-width;
+}
+
+.button {
+	padding: 1rem 1.5rem;
+
+	color: $gray-100;
+	background-color: $primary-500;
+	border-radius: 0.5rem;
+
+	&:hover {
+		// padding: 0.75rem 1.5rem 1.25rem 1.5rem;
+		color: $gray-100;
+		background-color: $primary-600;
+	}
+
+	&--transparent {
+		color: $primary-500;
+		background-color: inherit;
+		border: 1px solid $primary-500;
+	}
+}
+
+.hidden-mobile {
+	@include mobile {
+		display: none !important;
+	}
+}
+
+.visible-mobile {
+	@include mobile-above {
+		display: none !important;
+	}
+}

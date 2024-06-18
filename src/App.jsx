@@ -1,12 +1,15 @@
 import { lazy, Suspense } from 'react'
 import { Route, Routes, Link } from 'react-router-dom'
 
+import Header from './assets/components/Header'
+
 // const Home = lazy(() => import('./assets/pages/Home/Home'))
 
 export default function App() {
 	return (
 		<>
-			<Routes>
+			<Header />
+			{/* <Routes>
 				<Route
 					exact
 					path='/'
@@ -26,7 +29,7 @@ export default function App() {
 						</Suspense>
 					}
 				/>
-			</Routes>
+			</Routes> */}
 		</>
 	)
 }
