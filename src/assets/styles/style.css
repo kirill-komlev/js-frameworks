@@ -24,7 +24,7 @@ input {
 }
 
 a {
-  color: inherit;
+  color: #f2f3f4;
   text-decoration: none;
 }
 a:hover {
@@ -38,7 +38,7 @@ button {
 }
 
 body {
-  color: #8b8b8b;
+  color: #121212;
   background: #f2f3f4;
   font-family: "Roboto", sans-serif;
   font-size: clamp(16px, 1.25vw, 18px);
@@ -68,22 +68,6 @@ h4 {
   max-width: 1200px;
 }
 
-.button {
-  padding: 1rem 1.5rem;
-  color: #f2f3f4;
-  background-color: #4c75e7;
-  border-radius: 0.5rem;
-}
-.button:hover {
-  color: #f2f3f4;
-  background-color: #1d4fd7;
-}
-.button--transparent {
-  color: #4c75e7;
-  background-color: inherit;
-  border: 1px solid #4c75e7;
-}
-
 @media (max-width: 768px) {
   .hidden-mobile {
     display: none !important;
@@ -94,4 +78,75 @@ h4 {
   .visible-mobile {
     display: none !important;
   }
+}
+
+.header {
+  /* .header__inner */
+  position: absolute;
+  z-index: 1000;
+  padding: 16px 0;
+  width: 100%;
+  background-color: #f2f3f4;
+  /* .header__logo */
+  /* .header__title */
+  /* .header__menu */
+}
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  display: inline-flex;
+  align-items: center;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+}
+.header__title {
+  color: #1d4fd7;
+  font-size: clamp(18px, 1.6666666667vw, 24px);
+  font-weight: 700;
+}
+.header__menu {
+  /* .header__menu-list */
+  /* .header__menu-item */
+  /* .header__menu-link */
+}
+.header__menu-list {
+  display: inline-flex;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+}
+.header__menu-link {
+  padding: 8px;
+  color: #121212;
+  font-weight: 400;
+}
+.header__menu-link:hover {
+  color: #1d4fd7;
+}
+.header__menu-link.active {
+  color: #4c75e7;
+}
+
+.logo {
+  /* .logo__image */
+  width: 32px;
+  height: 32px;
+}
+.button {
+  padding: 1rem 1.5rem;
+  color: #f2f3f4;
+  background-color: #4c75e7;
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+.button:hover {
+  color: #f2f3f4;
+  background-color: #1d4fd7;
+}
+.button--transparent {
+  color: #4c75e7;
+  background-color: inherit;
+  border: 1px solid #4c75e7;
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,11 @@
+.intro {
+	height: 100vh;
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		height: 100%;
+	}
+}

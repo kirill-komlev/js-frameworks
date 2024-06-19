@@ -1,26 +1,26 @@
 import { lazy, Suspense } from 'react'
 import { Route, Routes, Link } from 'react-router-dom'
 
-import Header from './assets/components/Header'
+import Header from './assets/components/Header/Header'
 
-// const Home = lazy(() => import('./assets/pages/Home/Home'))
+const HomePage = lazy(() => import('./assets/pages/HomePage/HomePage'))
 
 export default function App() {
 	return (
 		<>
 			<Header />
-			{/* <Routes>
+			<Routes>
 				<Route
 					exact
 					path='/'
 					element={
-						<Suspense fallback={<Loading />}>
-							<Home />
+						<Suspense fallback={<p>Loading...</p>}>
+							<HomePage />
 						</Suspense>
 					}
 				/>
 
-				<Route
+				{/* <Route
 					exact
 					path='*'
 					element={
@@ -28,8 +28,8 @@ export default function App() {
 							<Error />
 						</Suspense>
 					}
-				/>
-			</Routes> */}
+				/> */}
+			</Routes>
 		</>
 	)
 }
