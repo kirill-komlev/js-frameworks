@@ -6,6 +6,11 @@
 	max-width: $container-width;
 }
 
+.background-tint {
+	background-color: rgba($dark-100, 0.75) !important;
+	background-blend-mode: multiply;
+}
+
 .hidden-mobile {
 	@include mobile {
 		display: none !important;

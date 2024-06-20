@@ -46,7 +46,7 @@ body {
 }
 
 h1 {
-  font-size: clamp(42px, 4.1666666667vw, 60px);
+  font-size: clamp(42px, 3.8888888889vw, 56px);
 }
 
 h2 {
@@ -68,6 +68,11 @@ h4 {
   max-width: 1200px;
 }
 
+.background-tint {
+  background-color: rgba(18, 18, 18, 0.75) !important;
+  background-blend-mode: multiply;
+}
+
 @media (max-width: 768px) {
   .hidden-mobile {
     display: none !important;
@@ -82,11 +87,12 @@ h4 {
 
 .header {
   /* .header__inner */
-  position: absolute;
+  position: fixed;
   z-index: 1000;
   padding: 16px 0;
   width: 100%;
   background-color: #f2f3f4;
+  box-shadow: 0px 4px 8px 0px rgba(18, 18, 18, 0.1);
   /* .header__logo */
   /* .header__title */
   /* .header__menu */

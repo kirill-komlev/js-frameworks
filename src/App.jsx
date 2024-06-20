@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react'
 import { Route, Routes, Link } from 'react-router-dom'
 
 import Header from './assets/components/Header/Header'
+import Loading from './assets/components/Loading/Loading'
 
 const HomePage = lazy(() => import('./assets/pages/HomePage/HomePage'))
 
@@ -14,7 +15,7 @@ export default function App() {
 					exact
 					path='/'
 					element={
-						<Suspense fallback={<p>Loading...</p>}>
+						<Suspense fallback={<Loading />}>
 							<HomePage />
 						</Suspense>
 					}

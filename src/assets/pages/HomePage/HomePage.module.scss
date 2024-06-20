@@ -1,10 +1,22 @@
+@import '../../styles/style.scss';
+
 .intro {
 	height: 100vh;
+
+	color: $gray-100;
+	background: url(../../../images/intro-bg.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 
 	&__inner {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		align-items: center;
+		text-align: center;
+
+		row-gap: 8px;
 
 		height: 100%;
 	}
