@@ -7,8 +7,6 @@
 	padding: 0;
 
 	box-sizing: border-box;
-
-	transition-duration: $transition-duration;
 }
 
 body {
@@ -25,6 +23,8 @@ a,
 button,
 input {
 	cursor: pointer;
+
+	transition-duration: $transition-duration;
 }
 
 a {

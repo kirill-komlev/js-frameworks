@@ -6,7 +6,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition-duration: 0.2s;
 }
 
 body {
@@ -22,6 +21,7 @@ a,
 button,
 input {
   cursor: pointer;
+  transition-duration: 0.2s;
 }
 
 a {
@@ -44,6 +44,18 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: clamp(16px, 1.25vw, 18px);
   font-weight: 300;
+}
+body.modal-open {
+  overflow: hidden;
+}
+body::-webkit-scrollbar {
+  width: 17px;
+}
+body::-webkit-scrollbar-track {
+  background: #f2f3f4;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #1d4fd7;
 }
 
 h1 {
@@ -246,7 +258,7 @@ section {
 .mobile-overlay__body {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   height: calc(100vh - 48px - 48px - 32px);
 }
 .mobile-overlay__body-list {
@@ -327,6 +339,9 @@ section {
 }
 .cross-button:hover {
   background-color: #4c75e7;
+}
+.cross-button:active {
+  background-color: #1d4fd7;
 }
 .cross-button::before, .cross-button::after {
   content: "";

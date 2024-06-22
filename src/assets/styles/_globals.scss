@@ -7,6 +7,22 @@ body {
 	@include fluid-text(18, 16);
 
 	font-weight: 300;
+
+	&.modal-open {
+		overflow: hidden;
+	}
+
+	&::-webkit-scrollbar {
+		width: 17px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: $gray-100;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: $primary-600;
+	}
 }
 
 h1 {
