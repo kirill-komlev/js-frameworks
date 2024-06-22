@@ -6,9 +6,76 @@
 	max-width: $container-width;
 }
 
+.intro {
+	height: 100vh;
+
+	color: $gray-100;
+
+	&--small {
+		height: 80vh;
+	}
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+
+		row-gap: 8px;
+
+		height: 100%;
+	}
+}
+
 .background-tint {
 	background-color: rgba($dark-100, 0.75) !important;
 	background-blend-mode: multiply;
+}
+
+.blogs-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+}
+
+.blog {
+	display: flex;
+	flex-direction: column;
+	row-gap: 8px;
+
+	width: calc(33% - 20px);
+
+	&-img {
+		height: 200px;
+		border-radius: calc($border-radius - $padding-inner);
+	}
+
+	&__title {
+		margin: 0; /* Убираем внешний отступ */
+		-webkit-line-clamp: 2; /* Число отображаемых строк */
+		display: -webkit-box; /* Включаем флексбоксы */
+		-webkit-box-orient: vertical; /* Вертикальная ориентация */
+		overflow: hidden; /* Обрезаем всё за пределами блока */
+	}
+
+	&__text {
+		margin: 0; /* Убираем внешний отступ */
+		-webkit-line-clamp: 4; /* Число отображаемых строк */
+		display: -webkit-box; /* Включаем флексбоксы */
+		-webkit-box-orient: vertical; /* Вертикальная ориентация */
+		overflow: hidden; /* Обрезаем всё за пределами блока */
+	}
+
+	&__link {
+		color: $dark-100;
+		text-decoration: underline;
+
+		&:hover {
+			color: $primary-600;
+		}
+	}
 }
 
 .hidden-mobile {
@@ -20,5 +87,25 @@
 .visible-mobile {
 	@include mobile-above {
 		display: none !important;
+	}
+}
+
+.loader {
+	width: 48px;
+	height: 48px;
+	border: 5px solid $primary-600;
+	border-bottom-color: transparent;
+	border-radius: 50%;
+	display: inline-block;
+	box-sizing: border-box;
+	animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
 	}
 }

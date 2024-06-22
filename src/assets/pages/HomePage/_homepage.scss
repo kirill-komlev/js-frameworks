@@ -1,0 +1,14 @@
+.mainpage {
+	background: url(../../images/intro-bg.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.popular-blogs {
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+	}
+}
