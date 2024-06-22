@@ -3,7 +3,9 @@ export default function Loading() {
 		<>
 			<main>
 				<section className='intro'>
-					<span className='loader'></span>
+					<div className='intro__inner'>
+						<span className='loader'></span>
+					</div>
 				</section>
 			</main>
 		</>
