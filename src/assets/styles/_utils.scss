@@ -33,23 +33,35 @@
 	background-blend-mode: multiply;
 }
 
-.blogs-section {
+.articles-section {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
-	gap: 20px;
+	flex-wrap: wrap;
+	gap: 40px;
 }
 
-.blog {
+.article {
 	display: flex;
 	flex-direction: column;
 	row-gap: 8px;
 
-	width: calc(33% - 20px);
+	max-height: 450px;
+	height: 100%;
+	width: calc(33% - 25px);
+
+	@include tablet {
+		width: calc(50% - 25px);
+	}
+
+	@include mobile {
+		width: 100%;
+	}
 
 	&-img {
 		height: 200px;
 		border-radius: calc($border-radius - $padding-inner);
+		object-fit: cover;
 	}
 
 	&__title {

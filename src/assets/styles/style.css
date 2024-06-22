@@ -52,7 +52,7 @@ body::-webkit-scrollbar {
   width: 17px;
 }
 body::-webkit-scrollbar-track {
-  background: #f2f3f4;
+  background: #e1e3e7;
 }
 body::-webkit-scrollbar-thumb {
   background-color: #1d4fd7;
@@ -80,9 +80,9 @@ section {
 
 .container {
   margin-inline: auto;
-  padding: 0 20px;
+  padding: 0 16px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1240px;
 }
 
 .intro {
@@ -107,42 +107,57 @@ section {
   background-blend-mode: multiply;
 }
 
-.blogs-section {
+.articles-section {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
-.blog {
+.article {
   display: flex;
   flex-direction: column;
   row-gap: 8px;
-  width: calc(33% - 20px);
+  max-height: 450px;
+  height: 100%;
+  width: calc(33% - 25px);
 }
-.blog-img {
+@media (max-width: 1024px) {
+  .article {
+    width: calc(50% - 25px);
+  }
+}
+@media (max-width: 768px) {
+  .article {
+    width: 100%;
+  }
+}
+.article-img {
   height: 200px;
   border-radius: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.blog__title {
+.article__title {
   margin: 0; /* Убираем внешний отступ */
   -webkit-line-clamp: 2; /* Число отображаемых строк */
   display: -webkit-box; /* Включаем флексбоксы */
   -webkit-box-orient: vertical; /* Вертикальная ориентация */
   overflow: hidden; /* Обрезаем всё за пределами блока */
 }
-.blog__text {
+.article__text {
   margin: 0; /* Убираем внешний отступ */
   -webkit-line-clamp: 4; /* Число отображаемых строк */
   display: -webkit-box; /* Включаем флексбоксы */
   -webkit-box-orient: vertical; /* Вертикальная ориентация */
   overflow: hidden; /* Обрезаем всё за пределами блока */
 }
-.blog__link {
+.article__link {
   color: #121212;
   text-decoration: underline;
 }
-.blog__link:hover {
+.article__link:hover {
   color: #1d4fd7;
 }
 
@@ -244,7 +259,7 @@ section {
 .mobile-overlay {
   width: 100%;
   height: 100%;
-  padding: 16px 20px;
+  padding: 16px;
   font-size: 18px;
   color: #121212;
   background-color: #e1e3e7;
@@ -325,7 +340,7 @@ section {
   width: 50%;
   height: 2px;
   background-color: #121212;
-  border-radius: 32px;
+  border-radius: 24px;
   box-shadow: 0 -8px #121212, 0 8px #121212;
 }
 
@@ -351,7 +366,7 @@ section {
   width: 50%;
   height: 2px;
   background-color: #121212;
-  border-radius: 32px;
+  border-radius: 24px;
 }
 .cross-button::before {
   rotate: 45deg;
@@ -367,8 +382,9 @@ section {
   background-repeat: no-repeat;
 }
 
-.popular-blogs__inner {
+.popular-articles__inner {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 40px;
 }/*# sourceMappingURL=style.css.map */

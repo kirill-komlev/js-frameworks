@@ -1,4 +1,8 @@
+import { NavLink } from 'react-router-dom'
+
 import introBg from '../../../images/intro-bg.jpg'
+
+import { articles } from '../../../data'
 
 export default function HomePage() {
 	return (
@@ -12,32 +16,86 @@ export default function HomePage() {
 					</div>
 				</div>
 
-				<section className='popular-blogs'>
-					<div className='popular-blogs__inner container'>
-						<h3>Последние блоги</h3>
-						<div className='popular-blogs blogs-section'>
-							<div className='popular-blogs blog'>
+				<section className='last-news'>
+					<div className='last-news__inner container'></div>
+				</section>
+
+				<section className='popular-articles'>
+					<div className='popular-articles__inner container'>
+						<h3>Последние статьи</h3>
+						<div className='popular-articles articles-section'>
+							<Data></Data>
+
+							<div className='popular-articles article'>
 								<img
-									className='blog-img'
+									className='article-img'
 									src={introBg}
 									alt=''
 								/>
-								<h4 className='blog__title'>Lorem ipsum dolor sit amet sit amet sit amet</h4>
-								<p className='blog__text'>
+								<h4 className='article__title'>Lorem ipsum dolor sit amet sit amet sit amet</h4>
+								<p className='article__text'>
 									Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, dolorem! Quam beatae sunt, minus magni eveniet repudiandae ex facere mollitia sit. Magnam a
 									quaerat odio atque quisquam? Earum, officia assumenda?
 								</p>
 								<a
-									className='blog__link'
+									className='article__link'
+									href=''
+								>
+									Узнать больше
+								</a>
+							</div>
+
+							<div className='popular-articles article'>
+								<img
+									className='article-img'
+									src={introBg}
+									alt=''
+								/>
+								<h4 className='article__title'>Lorem ipsum dolor sit amet sit amet sit amet</h4>
+								<p className='article__text'>
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, dolorem! Quam beatae sunt, minus magni eveniet repudiandae ex facere mollitia sit. Magnam a
+									quaerat odio atque quisquam? Earum, officia assumenda?
+								</p>
+								<a
+									className='article__link'
 									href=''
 								>
 									Узнать больше
 								</a>
 							</div>
 						</div>
+						<button className='button popular-articles__button'>
+							<NavLink
+								to='/article'
+								className='popular-articles__link'
+							>
+								Посмотреть все
+							</NavLink>
+						</button>
 					</div>
 				</section>
 			</main>
 		</>
 	)
+}
+
+function Data() {
+	let listItems = articles.map(info => (
+		<div className='popular-articles article'>
+			<img
+				className='article-img'
+				src={introBg}
+				alt=''
+			/>
+			<h4 className='article__title'>{info.title}</h4>
+			<p className='article__text'>{info.text}</p>
+			<a
+				className='article__link'
+				href=''
+			>
+				Узнать больше
+			</a>
+		</div>
+	))
+	return listItems
 }
