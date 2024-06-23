@@ -2,6 +2,8 @@ import { NavLink } from 'react-router-dom'
 
 import introBg from '../../../images/intro-bg.jpg'
 
+import Article from '../../components/Article/Article'
+
 import { articles } from '../../../data'
 
 export default function HomePage() {
@@ -16,62 +18,22 @@ export default function HomePage() {
 					</div>
 				</div>
 
-				<section className='last-news'>
-					<div className='last-news__inner container'></div>
+				<section className='latest-news'>
+					<div className='latest-news__inner container'></div>
 				</section>
 
-				<section className='popular-articles'>
-					<div className='popular-articles__inner container'>
+				<section className='latest-articles'>
+					<div className='latest-articles__inner container'>
 						<h3>Последние статьи</h3>
-						<div className='popular-articles articles-section'>
-							<Data></Data>
-
-							<div className='popular-articles article'>
-								<img
-									className='article-img'
-									src={introBg}
-									alt=''
-								/>
-								<h4 className='article__title'>Lorem ipsum dolor sit amet sit amet sit amet</h4>
-								<p className='article__text'>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, dolorem! Quam beatae sunt, minus magni eveniet repudiandae ex facere mollitia sit. Magnam a
-									quaerat odio atque quisquam? Earum, officia assumenda?
-								</p>
-								<a
-									className='article__link'
-									href=''
-								>
-									Узнать больше
-								</a>
-							</div>
-
-							<div className='popular-articles article'>
-								<img
-									className='article-img'
-									src={introBg}
-									alt=''
-								/>
-								<h4 className='article__title'>Lorem ipsum dolor sit amet sit amet sit amet</h4>
-								<p className='article__text'>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, dolorem! Quam beatae sunt, minus magni eveniet repudiandae ex facere mollitia sit. Magnam a
-									quaerat odio atque quisquam? Earum, officia assumenda?
-								</p>
-								<a
-									className='article__link'
-									href=''
-								>
-									Узнать больше
-								</a>
-							</div>
+						<div className='articles-section'>
+							<Data />
 						</div>
-						<button className='button popular-articles__button'>
-							<NavLink
-								to='/article'
-								className='popular-articles__link'
-							>
-								Посмотреть все
-							</NavLink>
-						</button>
+						<NavLink
+							to='/articles'
+							className='button articles__link'
+						>
+							Посмотреть все
+						</NavLink>
 					</div>
 				</section>
 			</main>
@@ -80,22 +42,39 @@ export default function HomePage() {
 }
 
 function Data() {
-	let listItems = articles.map(info => (
-		<div className='popular-articles article'>
-			<img
-				className='article-img'
-				src={introBg}
-				alt=''
-			/>
-			<h4 className='article__title'>{info.title}</h4>
-			<p className='article__text'>{info.text}</p>
-			<a
-				className='article__link'
-				href=''
-			>
-				Узнать больше
-			</a>
-		</div>
-	))
+	// let listItems = articles.map(info => (
+	// 	<div className='popular-articles article'>
+	// 		<img
+	// 			className='article-img'
+	// 			src={introBg}
+	// 			alt=''
+	// 		/>
+	// 		<h4 className='article__title'>{info.title}</h4>
+	// 		<p className='article__text'>{info.text}</p>
+	// 		<a
+	// 			className='article__link'
+	// 			href=''
+	// 		>
+	// 			Узнать больше
+	// 		</a>
+	// 	</div>
+	// ))
+
+	let listItems = []
+	for (let i = 0; i < articles.length; i++) {
+		if (i >= 3) {
+			return listItems
+		} else {
+			listItems.push(
+				<Article
+					key={i}
+					imgSrc={articles[i].img}
+					title={articles[i].title}
+					text={articles[i].text}
+					id={i}
+				/>
+			)
+		}
+	}
 	return listItems
 }

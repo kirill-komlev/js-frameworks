@@ -28,12 +28,39 @@ input {
 }
 
 a {
-	color: $gray-100;
+	color: $dark-100;
 	text-decoration: none;
 
 	&:hover {
 		text-decoration: none;
 	}
+}
+
+/**
+   Внешний отступ вниз для параграфа без атрибута class,
+   который расположен не последним среди своих соседних элементов
+  */
+
+h1:where(:not([class]):not(:last-child)),
+h2:where(:not([class]):not(:last-child)),
+h3:where(:not([class]):not(:last-child)),
+h4:where(:not([class]):not(:last-child)) {
+	padding: 16px 0;
+}
+
+p:where(:not([class]):not(:last-child)) {
+	margin-bottom: 16px;
+}
+
+a:where(:not([class])) {
+	color: $primary-600;
+	font-weight: 500;
+}
+
+ul:where(:not([class])) {
+	list-style-type: circle;
+	list-style-position: inside;
+	margin-bottom: 16px;
 }
 
 button {

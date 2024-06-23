@@ -19,6 +19,7 @@ export default function Header() {
 		document.body.style.marginRight = width + 'px'
 
 		modal.style.top = pagePosition + 'px'
+		modal.style.marginRight = width + 'px'
 	}
 
 	function closeModal() {

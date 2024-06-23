@@ -5,6 +5,7 @@ import Header from './assets/components/Header/Header'
 import Loading from './assets/components/Loading/Loading'
 
 const HomePage = lazy(() => import('./assets/pages/HomePage/HomePage'))
+const ArticlePage = lazy(() => import('./assets/pages/ArticlePage/ArticlePage'))
 
 export default function App() {
 	return (
@@ -17,6 +18,16 @@ export default function App() {
 					element={
 						<Suspense fallback={<Loading />}>
 							<HomePage />
+						</Suspense>
+					}
+				/>
+
+				<Route
+					exact
+					path='/articles/:id'
+					element={
+						<Suspense fallback={<Loading />}>
+							<ArticlePage />
 						</Suspense>
 					}
 				/>

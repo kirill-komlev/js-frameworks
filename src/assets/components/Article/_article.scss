@@ -1,0 +1,46 @@
+.article {
+	display: flex;
+	flex-direction: column;
+	row-gap: 8px;
+
+	width: calc(33% - 25px);
+
+	@include tablet {
+		width: calc(50% - 25px);
+	}
+
+	@include mobile {
+		width: 100%;
+	}
+
+	&-img {
+		height: 200px;
+		border-radius: calc($border-radius - $padding-inner);
+		object-fit: cover;
+	}
+
+	&__title {
+		margin: 0; /* Убираем внешний отступ */
+		-webkit-line-clamp: 2; /* Число отображаемых строк */
+		display: -webkit-box; /* Включаем флексбоксы */
+		-webkit-box-orient: vertical; /* Вертикальная ориентация */
+		overflow: hidden; /* Обрезаем всё за пределами блока */
+	}
+
+	&__text {
+		margin: 0; /* Убираем внешний отступ */
+		-webkit-line-clamp: 4; /* Число отображаемых строк */
+		display: -webkit-box; /* Включаем флексбоксы */
+		-webkit-box-orient: vertical; /* Вертикальная ориентация */
+		overflow: hidden; /* Обрезаем всё за пределами блока */
+	}
+
+	&__link {
+		color: $dark-100;
+		text-decoration: underline;
+
+		&:hover {
+			color: $primary-600;
+		}
+	}
+}

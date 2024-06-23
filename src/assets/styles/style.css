@@ -25,11 +25,37 @@ input {
 }
 
 a {
-  color: #f2f3f4;
+  color: #121212;
   text-decoration: none;
 }
 a:hover {
   text-decoration: none;
+}
+
+/**
+   Внешний отступ вниз для параграфа без атрибута class,
+   который расположен не последним среди своих соседних элементов
+  */
+h1:where(:not([class]):not(:last-child)),
+h2:where(:not([class]):not(:last-child)),
+h3:where(:not([class]):not(:last-child)),
+h4:where(:not([class]):not(:last-child)) {
+  padding: 16px 0;
+}
+
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: 16px;
+}
+
+a:where(:not([class])) {
+  color: #1d4fd7;
+  font-weight: 500;
+}
+
+ul:where(:not([class])) {
+  list-style-type: circle;
+  list-style-position: inside;
+  margin-bottom: 16px;
 }
 
 button {
@@ -105,60 +131,6 @@ section {
 .background-tint {
   background-color: rgba(18, 18, 18, 0.75) !important;
   background-blend-mode: multiply;
-}
-
-.articles-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-.article {
-  display: flex;
-  flex-direction: column;
-  row-gap: 8px;
-  max-height: 450px;
-  height: 100%;
-  width: calc(33% - 25px);
-}
-@media (max-width: 1024px) {
-  .article {
-    width: calc(50% - 25px);
-  }
-}
-@media (max-width: 768px) {
-  .article {
-    width: 100%;
-  }
-}
-.article-img {
-  height: 200px;
-  border-radius: 8px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.article__title {
-  margin: 0; /* Убираем внешний отступ */
-  -webkit-line-clamp: 2; /* Число отображаемых строк */
-  display: -webkit-box; /* Включаем флексбоксы */
-  -webkit-box-orient: vertical; /* Вертикальная ориентация */
-  overflow: hidden; /* Обрезаем всё за пределами блока */
-}
-.article__text {
-  margin: 0; /* Убираем внешний отступ */
-  -webkit-line-clamp: 4; /* Число отображаемых строк */
-  display: -webkit-box; /* Включаем флексбоксы */
-  -webkit-box-orient: vertical; /* Вертикальная ориентация */
-  overflow: hidden; /* Обрезаем всё за пределами блока */
-}
-.article__link {
-  color: #121212;
-  text-decoration: underline;
-}
-.article__link:hover {
-  color: #1d4fd7;
 }
 
 @media (max-width: 768px) {
@@ -264,7 +236,7 @@ section {
   color: #121212;
   background-color: #e1e3e7;
   border: none;
-  z-index: 1000;
+  z-index: 10000;
 }
 .mobile-overlay__close-button-wrapper {
   display: flex;
@@ -375,6 +347,50 @@ section {
   rotate: -45deg;
 }
 
+.article {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  width: calc(33% - 25px);
+}
+@media (max-width: 1024px) {
+  .article {
+    width: calc(50% - 25px);
+  }
+}
+@media (max-width: 768px) {
+  .article {
+    width: 100%;
+  }
+}
+.article-img {
+  height: 200px;
+  border-radius: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.article__title {
+  margin: 0; /* Убираем внешний отступ */
+  -webkit-line-clamp: 2; /* Число отображаемых строк */
+  display: -webkit-box; /* Включаем флексбоксы */
+  -webkit-box-orient: vertical; /* Вертикальная ориентация */
+  overflow: hidden; /* Обрезаем всё за пределами блока */
+}
+.article__text {
+  margin: 0; /* Убираем внешний отступ */
+  -webkit-line-clamp: 4; /* Число отображаемых строк */
+  display: -webkit-box; /* Включаем флексбоксы */
+  -webkit-box-orient: vertical; /* Вертикальная ориентация */
+  overflow: hidden; /* Обрезаем всё за пределами блока */
+}
+.article__link {
+  color: #121212;
+  text-decoration: underline;
+}
+.article__link:hover {
+  color: #1d4fd7;
+}
+
 .mainpage {
   background: url(../../images/intro-bg.jpg);
   background-position: center;
@@ -382,9 +398,25 @@ section {
   background-repeat: no-repeat;
 }
 
-.popular-articles__inner {
+.latest-articles__inner {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
+}
+.articles-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  row-gap: 40px;
+  width: 100%;
+}
+
+.intro-img {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=style.css.map */
