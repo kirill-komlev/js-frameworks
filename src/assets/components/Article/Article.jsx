@@ -1,9 +1,9 @@
 import { NavLink } from 'react-router-dom'
 
-export default function Article({ className, imgSrc, title, text, id }) {
+export default function Article({ imgSrc, title, text, id }) {
 	return (
 		<>
-			<div className={`${className} article`}>
+			<div className={`article`}>
 				<img
 					className='article-img'
 					src={imgSrc}
