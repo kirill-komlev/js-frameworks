@@ -5,6 +5,7 @@
 	&__inner {
 		display: flex;
 		justify-content: space-between;
+		flex-wrap: wrap;
 		gap: 40px;
 	}
 
@@ -14,10 +15,18 @@
 		gap: 16px;
 
 		flex: 1;
+
+		@include mobile {
+			flex: 1 100%;
+		}
 	}
 
 	&__section:first-child {
 		flex: 2;
+
+		@include tablet {
+			flex: 2 100%;
+		}
 	}
 
 	&__logo {

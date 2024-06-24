@@ -405,6 +405,7 @@ section {
 .footer__inner {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 40px;
 }
 .footer__section {
@@ -413,8 +414,18 @@ section {
   gap: 16px;
   flex: 1;
 }
+@media (max-width: 768px) {
+  .footer__section {
+    flex: 1 100%;
+  }
+}
 .footer__section:first-child {
   flex: 2;
+}
+@media (max-width: 1024px) {
+  .footer__section:first-child {
+    flex: 2 100%;
+  }
 }
 .footer__logo {
   display: flex;
