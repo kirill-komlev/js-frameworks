@@ -2,7 +2,15 @@
 	&__block {
 		display: flex;
 		flex-direction: column;
-		row-gap: 8px;
+		row-gap: 12px;
+
+		background-color: $gray-200;
+		border-radius: calc($border-radius - $padding-inner);
+
+		&:hover {
+			color: $gray-100;
+			background-color: rgba($primary-600, 0.75);
+		}
 	}
 
 	&-img {
@@ -14,14 +22,30 @@
 	}
 
 	&__title {
+		padding-inline: 16px;
 	}
 
-	&__link {
-		color: $dark-100;
-		text-decoration: underline;
+	&__date {
+		padding: 0 16px 16px 16px;
+	}
+}
 
-		&:hover {
-			color: $primary-600;
-		}
+.articles-section {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 1fr;
+	grid-column-gap: 32px;
+	grid-row-gap: 32px;
+	justify-items: stretch;
+	align-items: stretch;
+
+	width: 100%;
+
+	@include mobile {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include small-mobile {
+		grid-template-columns: repeat(1, 1fr);
 	}
 }

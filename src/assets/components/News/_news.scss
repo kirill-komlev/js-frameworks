@@ -1,0 +1,61 @@
+.news {
+	&-section {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(1, 1fr);
+		gap: 32px 32px;
+		grid-auto-flow: row;
+
+		width: 100%;
+
+		& > .background-tint:hover {
+			background-color: rgba($primary-600, 0.75) !important;
+			background-blend-mode: multiply;
+		}
+
+		@include mobile {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+		}
+
+		@include small-mobile {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	&-block {
+		position: relative;
+
+		height: 200px;
+
+		@include mobile {
+			&:first-child {
+				grid-area: 1 / 1 / 2 / 3;
+			}
+		}
+
+		@include small-mobile {
+			&:first-child {
+				grid-area: auto;
+			}
+		}
+	}
+
+	&-img {
+		position: relative;
+
+		height: 100%;
+		width: 100%;
+
+		z-index: -1;
+	}
+
+	&-text {
+		position: absolute;
+		bottom: 0;
+
+		padding: 16px;
+
+		color: $gray-100;
+	}
+}

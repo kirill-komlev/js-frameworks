@@ -17,14 +17,11 @@
 	}
 }
 
-.articles-section {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr;
-	grid-column-gap: 20px;
-	grid-row-gap: 20px;
-	justify-items: stretch;
-	align-items: stretch;
-
-	width: 100%;
+.latest-news {
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 40px;
+	}
 }

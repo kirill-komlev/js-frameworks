@@ -39,6 +39,11 @@ a:hover {
   text-decoration: none;
 }
 
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 /**
    Внешний отступ вниз для параграфа без атрибута class,
    который расположен не последним среди своих соседних элементов
@@ -63,6 +68,11 @@ ul:where(:not([class])) {
   list-style-type: circle;
   list-style-position: inside;
   margin-bottom: 16px;
+}
+
+img:where(:not([class])) {
+  height: 100%;
+  max-width: 100%;
 }
 
 button {
@@ -139,6 +149,10 @@ section {
   background-color: rgba(18, 18, 18, 0.75) !important;
   background-blend-mode: multiply;
 }
+.background-tint-gradient {
+  background: rgb(18, 18, 18);
+  background: linear-gradient(360deg, #121212 0%, rgba(255, 255, 255, 0) 100%);
+}
 
 @media (max-width: 768px) {
   .hidden-mobile {
@@ -152,25 +166,6 @@ section {
   }
 }
 
-.loader {
-  width: 48px;
-  height: 48px;
-  border: 5px solid #1d4fd7;
-  border-bottom-color: transparent;
-  border-radius: 50%;
-  display: inline-block;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 .header {
   /* .header__inner */
   position: fixed;
@@ -357,7 +352,13 @@ section {
 .article__block {
   display: flex;
   flex-direction: column;
-  row-gap: 8px;
+  row-gap: 12px;
+  background-color: #e1e3e7;
+  border-radius: 8px;
+}
+.article__block:hover {
+  color: #f2f3f4;
+  background-color: rgba(29, 79, 215, 0.75);
 }
 .article-img {
   width: 100%;
@@ -366,12 +367,82 @@ section {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.article__link {
-  color: #121212;
-  text-decoration: underline;
+.article__title {
+  padding-inline: 16px;
 }
-.article__link:hover {
-  color: #1d4fd7;
+.article__date {
+  padding: 0 16px 16px 16px;
+}
+
+.articles-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 32px;
+  grid-row-gap: 32px;
+  justify-items: stretch;
+  align-items: stretch;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .articles-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 425px) {
+  .articles-section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.news-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 32px 32px;
+  grid-auto-flow: row;
+  width: 100%;
+}
+.news-section > .background-tint:hover {
+  background-color: rgba(29, 79, 215, 0.75) !important;
+  background-blend-mode: multiply;
+}
+@media (max-width: 768px) {
+  .news-section {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+@media (max-width: 425px) {
+  .news-section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.news-block {
+  position: relative;
+  height: 200px;
+}
+@media (max-width: 768px) {
+  .news-block:first-child {
+    grid-area: 1/1/2/3;
+  }
+}
+@media (max-width: 425px) {
+  .news-block:first-child {
+    grid-area: auto;
+  }
+}
+.news-img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.news-text {
+  position: absolute;
+  bottom: 0;
+  padding: 16px;
+  color: #f2f3f4;
 }
 
 .footer {
@@ -452,15 +523,11 @@ section {
   align-items: center;
   gap: 40px;
 }
-.articles-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-  justify-items: stretch;
-  align-items: stretch;
-  width: 100%;
+.latest-news__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
 }
 
 .intro-img {
@@ -469,4 +536,14 @@ section {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.articles-page-intro {
+  display: flex;
+  align-items: center;
+  height: 40vh;
+  background-image: linear-gradient(90deg, rgb(18, 18, 18) 0%, transparent 59%), repeating-linear-gradient(45deg, rgba(168, 168, 168, 0.1) 0px, rgba(168, 168, 168, 0.1) 1px, transparent 1px, transparent 13px), repeating-linear-gradient(135deg, rgba(168, 168, 168, 0.1) 0px, rgba(168, 168, 168, 0.1) 1px, transparent 1px, transparent 13px), linear-gradient(90deg, rgb(18, 18, 18), rgb(18, 18, 18));
+}
+.articles-page-intro > .intro__inner {
+  align-items: flex-start;
 }/*# sourceMappingURL=style.css.map */

@@ -31,6 +31,11 @@
 .background-tint {
 	background-color: rgba($dark-100, 0.75) !important;
 	background-blend-mode: multiply;
+
+	&-gradient {
+		background: rgb(18, 18, 18);
+		background: linear-gradient(360deg, rgba($dark-100, 1) 0%, rgba(255, 255, 255, 0) 100%);
+	}
 }
 
 .hidden-mobile {
@@ -42,25 +47,5 @@
 .visible-mobile {
 	@include mobile-above {
 		display: none !important;
-	}
-}
-
-.loader {
-	width: 48px;
-	height: 48px;
-	border: 5px solid $primary-600;
-	border-bottom-color: transparent;
-	border-radius: 50%;
-	display: inline-block;
-	box-sizing: border-box;
-	animation: rotation 1s linear infinite;
-}
-
-@keyframes rotation {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
 	}
 }

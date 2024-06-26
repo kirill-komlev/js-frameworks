@@ -1,10 +1,9 @@
 import { NavLink } from 'react-router-dom'
 
-import introBg from '../../../images/intro-bg.jpg'
-
 import Article from '../../components/Article/Article'
+import News from '../../components/News/News'
 
-import { articles } from '../../../data'
+import { news, articles } from '../../../data'
 
 export default function HomePage() {
 	return (
@@ -17,14 +16,25 @@ export default function HomePage() {
 			</div>
 
 			<section className='latest-news'>
-				<div className='latest-news__inner container'></div>
+				<div className='latest-news__inner container'>
+					<h3>Последние новости</h3>
+					<div className='news-section'>
+						<NewsData />
+					</div>
+					<NavLink
+						to='/news'
+						className='button news__link'
+					>
+						Посмотреть все
+					</NavLink>
+				</div>
 			</section>
 
 			<section className='latest-articles'>
 				<div className='latest-articles__inner container'>
 					<h3>Последние статьи</h3>
 					<div className='articles-section'>
-						<Data />
+						<ArticlesData />
 					</div>
 					<NavLink
 						to='/articles'
@@ -38,25 +48,7 @@ export default function HomePage() {
 	)
 }
 
-function Data() {
-	// let listItems = articles.map(info => (
-	// 	<div className='popular-articles article'>
-	// 		<img
-	// 			className='article-img'
-	// 			src={introBg}
-	// 			alt=''
-	// 		/>
-	// 		<h4 className='article__title'>{info.title}</h4>
-	// 		<p className='article__text'>{info.text}</p>
-	// 		<a
-	// 			className='article__link'
-	// 			href=''
-	// 		>
-	// 			Узнать больше
-	// 		</a>
-	// 	</div>
-	// ))
-
+function ArticlesData() {
 	let listItems = []
 	for (let i = 0; i < articles.length; i++) {
 		if (i >= 4) {
@@ -67,11 +59,30 @@ function Data() {
 					key={i}
 					imgSrc={articles[i].img}
 					title={articles[i].title}
-					text={articles[i].text}
+					date={articles[i].date}
 					id={i}
 				/>
 			)
 		}
 	}
 	return listItems
+}
+
+function NewsData() {
+	let listItems = []
+	for (let i = 0; i < news.length; i++) {
+		if (i >= 3) {
+			return listItems
+		} else {
+			listItems.push(
+				<News
+					key={i}
+					imgSrc={news[i].img}
+					title={news[i].title}
+					date={news[i].date}
+					id={i}
+				/>
+			)
+		}
+	}
 }

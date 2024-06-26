@@ -44,6 +44,10 @@ a {
 	}
 }
 
+img {
+	object-fit: cover;
+}
+
 /**
    Внешний отступ вниз для параграфа без атрибута class,
    который расположен не последним среди своих соседних элементов
@@ -69,6 +73,11 @@ ul:where(:not([class])) {
 	list-style-type: circle;
 	list-style-position: inside;
 	margin-bottom: 16px;
+}
+
+img:where(:not([class])) {
+	height: 100%;
+	max-width: 100%;
 }
 
 button {

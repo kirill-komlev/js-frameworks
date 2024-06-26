@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 
-export default function Article({ imgSrc, title, text, id }) {
+export default function Article({ imgSrc, title, date, id }) {
 	return (
 		<>
 			<NavLink
@@ -16,6 +16,10 @@ export default function Article({ imgSrc, title, text, id }) {
 					className='article__title'
 					dangerouslySetInnerHTML={{ __html: title }}
 				></h5>
+				<small
+					className='article__date'
+					dangerouslySetInnerHTML={{ __html: date }}
+				></small>
 			</NavLink>
 		</>
 	)
