@@ -3,27 +3,20 @@ import { NavLink } from 'react-router-dom'
 export default function Article({ imgSrc, title, text, id }) {
 	return (
 		<>
-			<div className={`article`}>
+			<NavLink
+				to={`/articles/${id}`}
+				className='article__block'
+			>
 				<img
 					className='article-img'
 					src={imgSrc}
 					alt=''
 				/>
-				<h4
+				<h5
 					className='article__title'
 					dangerouslySetInnerHTML={{ __html: title }}
-				></h4>
-				<div
-					className='article__text'
-					dangerouslySetInnerHTML={{ __html: text }}
-				></div>
-				<NavLink
-					className='article__link'
-					to={`/articles/${id}`}
-				>
-					Узнать больше
-				</NavLink>
-			</div>
+				></h5>
+			</NavLink>
 		</>
 	)
 }

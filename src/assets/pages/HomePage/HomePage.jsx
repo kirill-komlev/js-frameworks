@@ -13,7 +13,6 @@ export default function HomePage() {
 				<div className='intro__inner container'>
 					<h1 className='intro__title'>Всё о JavaScript фреймворках</h1>
 					<h4 className='intro__subtitle}'>Обзоры, сравнения и рекомендации по выбору</h4>
-					{/* <p className='intro__text'>Изучайте лучшие инструменты для разработки веб-приложений с помощью наших статей и обзоров</p> */}
 				</div>
 			</div>
 
@@ -60,7 +59,7 @@ function Data() {
 
 	let listItems = []
 	for (let i = 0; i < articles.length; i++) {
-		if (i >= 3) {
+		if (i >= 4) {
 			return listItems
 		} else {
 			listItems.push(

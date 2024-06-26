@@ -18,11 +18,13 @@
 }
 
 .articles-section {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	flex-wrap: wrap;
-	gap: 40px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+	justify-items: stretch;
+	align-items: stretch;
 
 	width: 100%;
 }

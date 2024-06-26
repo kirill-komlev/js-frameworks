@@ -22,10 +22,7 @@ export default function Footer() {
 								/>
 								JS Frameworks
 							</NavLink>
-							<p>
-								Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam necessitatibus commodi repellendus hic et maiores eaque ab officiis, incidunt sit laborum ducimus
-								molestiae consequuntur nostrum cupiditate harum culpa sed reprehenderit.
-							</p>
+							<p>Изучайте лучшие инструменты для разработки веб-приложений с помощью наших статей и обзоров</p>
 						</div>
 
 						<div className='footer__section'>

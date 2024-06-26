@@ -9,7 +9,7 @@ export default function ArticlePage() {
 
 	return (
 		<>
-			<div className='article-page intro intro--small background-tint'>
+			<div className='full-article-page intro intro--small background-tint'>
 				<img
 					className='intro--small intro-img'
 					src={data.img}
@@ -20,7 +20,7 @@ export default function ArticlePage() {
 				</div>
 			</div>
 			<section>
-				<div className='main-article__inner container'>
+				<div className='main-full-article__inner container'>
 					<div dangerouslySetInnerHTML={{ __html: data.text }} />
 				</div>
 			</section>

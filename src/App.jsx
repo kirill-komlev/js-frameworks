@@ -6,7 +6,7 @@ import Loading from './assets/components/Loading/Loading'
 import Footer from './assets/components/Footer/Footer'
 
 const HomePage = lazy(() => import('./assets/pages/HomePage/HomePage'))
-const ArticlePage = lazy(() => import('./assets/pages/ArticlePage/ArticlePage'))
+const FullArticlePage = lazy(() => import('./assets/pages/FullArticlePage/FullArticlePage'))
 
 export default function App() {
 	return (
@@ -29,7 +29,7 @@ export default function App() {
 						path='/articles/:id'
 						element={
 							<Suspense fallback={<Loading />}>
-								<ArticlePage />
+								<FullArticlePage />
 							</Suspense>
 						}
 					/>
