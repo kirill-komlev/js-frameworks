@@ -45,14 +45,14 @@ export default function Footer() {
 											Статьи
 										</NavLink>
 									</li>
-									<li className='footer__menu-item'>
+									{/* <li className='footer__menu-item'>
 										<NavLink
 											className='footer__menu-link'
 											to='/video'
 										>
 											Видео
 										</NavLink>
-									</li>
+									</li> */}
 								</ul>
 							</nav>
 						</div>

@@ -36,7 +36,10 @@ export default function Header() {
 					<NavLink
 						className='header__logo'
 						to='/'
-						onClick={() => setHeaderModal(false)}
+						onClick={() => {
+							setHeaderModal(false)
+							closeModal()
+						}}
 					>
 						<img
 							src={logo}
@@ -63,14 +66,14 @@ export default function Header() {
 									Статьи
 								</NavLink>
 							</li>
-							<li className='header__menu-item'>
+							{/* <li className='header__menu-item'>
 								<NavLink
 									className='header__menu-link'
 									to='/video'
 								>
 									Видео
 								</NavLink>
-							</li>
+							</li> */}
 						</ul>
 					</nav>
 					<Button
@@ -133,7 +136,7 @@ export default function Header() {
 									Статьи
 								</NavLink>
 							</li>
-							<li className='mobile-overlay__body-item'>
+							{/* <li className='mobile-overlay__body-item'>
 								<NavLink
 									className='mobile-overlay__body-link'
 									to='/video'
@@ -144,7 +147,7 @@ export default function Header() {
 								>
 									Видео
 								</NavLink>
-							</li>
+							</li> */}
 						</ul>
 					</div>
 				</Modal>

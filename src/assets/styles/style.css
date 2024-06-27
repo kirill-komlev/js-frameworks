@@ -510,6 +510,25 @@ section {
   filter: invert(99%) sepia(0%) saturate(7500%) hue-rotate(152deg) brightness(114%) contrast(100%);
 }
 
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #1d4fd7;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .mainpage {
   background: url(../../images/intro-bg.jpg);
   background-position: center;

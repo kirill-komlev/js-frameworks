@@ -1,15 +1,15 @@
-import { articles } from '../../../data'
+import { news } from '../../../data'
 
 import { useParams } from 'react-router-dom'
 
-export default function FullArticlePage() {
+export default function FullNewsPage() {
 	const param = useParams()
 
-	let data = articles[param.id]
+	let data = news[param.id]
 
 	return (
 		<>
-			<div className='full-article-page intro intro--small background-tint'>
+			<div className='full-news-page intro intro--small background-tint'>
 				<img
 					className='intro--small intro-img'
 					src={data.img}
@@ -21,7 +21,7 @@ export default function FullArticlePage() {
 				</div>
 			</div>
 			<section>
-				<div className='main-full-article__inner container'>
+				<div className='main-full-news__inner container'>
 					<div dangerouslySetInnerHTML={{ __html: data.text }} />
 				</div>
 			</section>

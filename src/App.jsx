@@ -8,6 +8,8 @@ import Footer from './assets/components/Footer/Footer'
 const HomePage = lazy(() => import('./assets/pages/HomePage/HomePage'))
 const ArticlesPage = lazy(() => import('./assets/pages/ArticlesPage/ArticlesPage'))
 const FullArticlePage = lazy(() => import('./assets/pages/FullArticlePage/FullArticlePage'))
+const NewsPage = lazy(() => import('./assets/pages/NewsPage/NewsPage'))
+const FullNewsPage = lazy(() => import('./assets/pages/FullNewsPage/FullNewsPage'))
 
 export default function App() {
 	return (
@@ -41,6 +43,26 @@ export default function App() {
 						element={
 							<Suspense fallback={<Loading />}>
 								<FullArticlePage />
+							</Suspense>
+						}
+					/>
+
+					<Route
+						exact
+						path='/news'
+						element={
+							<Suspense fallback={<Loading />}>
+								<NewsPage />
+							</Suspense>
+						}
+					/>
+
+					<Route
+						exact
+						path='/news/:id'
+						element={
+							<Suspense fallback={<Loading />}>
+								<FullNewsPage />
 							</Suspense>
 						}
 					/>
