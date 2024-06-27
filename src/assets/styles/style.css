@@ -74,6 +74,11 @@ ul:where(:not([class])) {
   margin-bottom: 16px;
 }
 
+ol:where(:not([class])) {
+  list-style-position: inside;
+  margin-bottom: 16px;
+}
+
 img:where(:not([class])) {
   height: 100%;
   max-width: 100%;
