@@ -18,6 +18,7 @@ export default function Header() {
 		document.body.classList.add('modal-open')
 		document.body.style.marginRight = width + 'px'
 
+		modal.style.display = 'block'
 		modal.style.top = pagePosition + 'px'
 		modal.style.marginRight = width + 'px'
 	}
@@ -26,6 +27,7 @@ export default function Header() {
 		document.body.classList.remove('modal-open')
 		document.body.style.marginRight = 0
 
+		modal.style.display = 'none'
 		modal.style.top = 0
 	}
 

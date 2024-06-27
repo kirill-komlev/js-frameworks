@@ -15,6 +15,10 @@
   height: 100vh;
 }
 
+#modal {
+  display: none;
+}
+
 body {
   min-height: 100%;
   line-height: 1.5;
@@ -115,6 +119,10 @@ h3 {
 
 h4 {
   font-size: clamp(18px, 1.3888888889vw, 20px);
+}
+
+h5 {
+  font-size: clamp(16px, 1.25vw, 18px);
 }
 
 section {
@@ -498,7 +506,7 @@ section {
   color: #f2f3f4;
 }
 .footer__menu-link:hover {
-  color: #1d4fd7;
+  color: #4c75e7;
 }
 .footer__contact-links {
   display: flex;
