@@ -7,6 +7,20 @@
 	display: inline-block;
 	box-sizing: border-box;
 	animation: rotation 1s linear infinite;
+
+	&-intro {
+		position: absolute;
+		z-index: 99999;
+		top: 0;
+		left: 0;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		height: 100%;
+		width: 100%;
+	}
 }
 
 @keyframes rotation {

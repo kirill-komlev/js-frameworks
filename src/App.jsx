@@ -1,5 +1,5 @@
-import { lazy, Suspense } from 'react'
-import { Route, Routes, Link } from 'react-router-dom'
+import { lazy, Suspense, useEffect } from 'react'
+import { Route, Routes, Link, useLocation } from 'react-router-dom'
 
 import Header from './assets/components/Header/Header'
 import Loading from './assets/components/Loading/Loading'
@@ -11,11 +11,22 @@ const FullArticlePage = lazy(() => import('./assets/pages/FullArticlePage/FullAr
 const NewsPage = lazy(() => import('./assets/pages/NewsPage/NewsPage'))
 const FullNewsPage = lazy(() => import('./assets/pages/FullNewsPage/FullNewsPage'))
 
+const ScrollToTop = () => {
+	const { pathname } = useLocation()
+
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [pathname])
+
+	return null
+}
+
 export default function App() {
 	return (
 		<>
 			<Header />
 			<main>
+				<ScrollToTop />
 				<Routes>
 					<Route
 						exact
